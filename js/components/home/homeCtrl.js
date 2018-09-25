@@ -15,6 +15,6 @@ testApp.controller('homeCtrl',
 		  ];
 		  }
 		  init();
-		  console.log(vm);
+		  alert('123');
     }
 )
