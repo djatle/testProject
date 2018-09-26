@@ -1,15 +1,17 @@
 "use strict";
-	testApp.directive('productItem', function(){
+	testApp.directive('productItem', ['appSettings', function(appSettings){
 		return{
 			restrict: 'E',
 			scope: {
-				productItem: '<'
+				productItem: '='
 			},
 			link: link,
 			templateUrl: 'js/components/directives/productItem/productItem.html'
 		}
 		
 		function link(scope){
-			console.log(scope.productItem);
+			if(!scope.productItem.description){
+				scope.productItem.description = appSettings.sampleProductDescription;
+			};
 		}
-	});
+	}]);

@@ -10,6 +10,60 @@
   max-width: 1000px;
   margin: 0 auto; }
 
+.base-padding {
+  padding: 16px; }
+
+.no-padding {
+  padding: 0 !important; }
+
+.bold {
+  font-weight: bold; }
+
+.product-item {
+  border: 1px solid blue;
+  margin-bottom: 25px; }
+  .product-item__header {
+    display: flex; }
+  .product-item__logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+  .product-item__product-info {
+    padding-left: 16px;
+    padding-top: 2px; }
+  .product-item__product-name {
+    font-size: 16px;
+    color: #3c3c3c;
+    line-height: 16px;
+    margin-bottom: 0; }
+  .product-item__company-name {
+    color: #757575;
+    font-size: 13px; }
+  .product-item__image {
+    width: 100%;
+    min-height: 190px; }
+  .product-item__description-block {
+    color: #212121;
+    font-size: 14px; }
+
+.products-board {
+  margin-left: -15px;
+  margin-right: -15px; }
+  .products-board__header {
+    margin-left: 15px; }
+  .products-board__header-wrapper {
+    display: flex;
+    justify-content: space-between; }
+  .products-board__actions-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .products-board .product-add-btn {
+    border: 1px solid green;
+    min-width: 105px;
+    height: 40px;
+    background-color: #A981CC; }
+
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
   line-height: 1.15;
@@ -170,7 +224,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fefefe;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: normal;
   line-height: 1.5;
   color: #0a0a0a;
@@ -494,7 +548,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-weight: normal;
   color: inherit;
@@ -1574,9 +1628,7 @@ ul.no-bullet, ol.no-bullet {
         margin-bottom: 0; } }
 
 body {
-  color: green; }
-  @media print, screen and (min-width: 64em) {
-    body p {
-      color: red; } }
+  background-color: #f8f8f8;
+  font-family: Roboto, sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

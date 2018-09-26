@@ -1,5 +1,8 @@
 @import '../../node_modules/foundation-sites/scss/foundation';
+@import 'settings.scss';
 @import 'objects.scss';
+@import 'components/product-item.scss';
+@import 'components/products-board.scss';
 
 @include foundation-global-styles;
 @include foundation-forms;
@@ -9,12 +12,8 @@
 @include foundation-flex-classes;
 @include foundation-flex-grid;
 
-$xy-grid : 'false';
+
 body{
-	color: green;
-	p{
-		@include breakpoint (large){
-			color: red;
-		}
-	} 
+	background-color: #f8f8f8;
+	font-family: $body-font-family;
 }

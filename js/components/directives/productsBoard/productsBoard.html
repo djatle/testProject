@@ -1,6 +1,14 @@
 <div class="products-board">
-	<h1 class="products-board__header">Products</h1>
-	<div data-ng-repeat="product in recievedProductsList">
-		<product-item data-product-item="product"></product-item>
+	<div class="products-board__header-wrapper">
+		<h1 class="products-board__header">Products</h1>
+		<div class="products-board__actions-container">
+			<input type="text" placeholder="Search">
+			<button class="product-add-btn">Add New</button>
+		</div>
+	</div>
+	<div class="products-board__card-container row">
+		<div data-ng-repeat="product in recievedProductsList" class="column small-12 medium-6 large-4">
+			<product-item data-product-item="product"></product-item>
+		</div>
 	</div>	
 </div>
