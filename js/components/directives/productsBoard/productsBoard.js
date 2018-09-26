@@ -1,5 +1,5 @@
 	"use strict";
-	testApp.directive('productsBoard', function(){		
+	testApp.directive('productsBoard', ['Popeye', function(Popeye){		
 		return {
 			restrict : 'E',
 			scope: {
@@ -10,7 +10,14 @@
 		}
 		 function link(scope){
 			 scope.recievedProductsList = scope.productsList;
+			 
+			 scope.addNewProduct = function(){
+			 var modal = Popeye.openModal({
+				  templateUrl: "js/components/modals/addProductModal.html",
+				  controller: "addProductModalCtrl as addProductModalCtrl",
+				});
+			 }
 		 }	
-	})
+	}])
 
 
