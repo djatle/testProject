@@ -1,0 +1,14 @@
+<div class="popeye-modal-container">
+  <div class="popeye-modal">
+    <a class="popeye-close-modal" href ng-click="$close()"></a>
+    <form class="small-12 medium-6" name="productForm">
+		<label for="productName">Product Name</label>
+		<input type="text" placeholder="Type Product Name" id="productName" required data-ng-model="addProductModalCtrl.userProduct.productName" >
+		<label for="companyName">Company Name</label>
+		<input type="text" placeholder="Type Company Name" id="companyName" required data-ng-model="addProductModalCtrl.userProduct.companyName">
+		<label for="productDescription">Product Description</label>
+		<textarea placeholder="Insert information about your product here" id="productDescription"></textarea>
+		<button type="submit" ng-click="addProductModalCtrl.saveProduct(productForm)">Сохранить</button>
+	</form>
+  </div>
+</div>
