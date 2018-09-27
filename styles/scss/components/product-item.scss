@@ -1,6 +1,9 @@
 .product-item{
-	border: 1px solid blue;
-	margin-bottom: 25px;	
+	margin-bottom: 25px;
+	padding-bottom: 16px;
+	position: relative;
+	background-color: white;
+	box-shadow: 0 0 3px rgba(0,0,0,0.13);	 
 	&__header{
 		display: flex;
 	}
@@ -31,4 +34,25 @@
 		color: $glass-black;
 		font-size: 14px; 
 	}
+	&__actions-block{
+		padding-left: 7px;
+	}
+	
+	&__remove-btn{
+		position: absolute;
+		top: 10px;
+		right: 16px;
+		font-size: 20px;
+		color: $glass-grey;
+		display: none;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+	&:hover{
+		box-shadow: 0 2px 16px rgba(0,0,0,0.13);
+		.product-item__remove-btn{
+			display: block;
+		}
+	}	
 }

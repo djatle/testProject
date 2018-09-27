@@ -1,5 +1,5 @@
 "use strict";
-	testApp.directive('productItem', ['appSettings', function(appSettings){
+	testApp.directive('productItem', ['appSettings', 'Popeye',  function(appSettings, Popeye){
 		return{
 			restrict: 'E',
 			scope: {
@@ -10,8 +10,16 @@
 		}
 		
 		function link(scope){
-			if(!scope.productItem.description){
-				scope.productItem.description = appSettings.sampleProductDescription;
-			};
+			if(!scope.productItem.productDescription){
+				scope.productItem.productDescription = appSettings.sampleProductDescription;
+			};	
+			 		
+			scope.removeProduct = function(){
+				var modal = Popeye.openModal({
+				  templateUrl: "js/components/modals/removeProductModal.html",
+				  controller: "removeProductModalCtrl as removeProductModalCtrl",
+				  scope: scope
+				});
+			}
 		}
 	}]);

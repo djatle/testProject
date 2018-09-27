@@ -1,15 +1,58 @@
 
 .main-wrapper{
-	border: 1px solid red;
+	padding: 30px 0;
 	max-width: 1000px;
 	margin: 0 auto;
 }
 .base-padding{
 	padding: 16px;
 }
-.no-padding{
-	padding: 0 !important;
-}
 .bold{
 	font-weight: bold;
 }
+.button{
+	width: 85px;
+	height: 35px;
+	border-radius: 2px !important;
+	font-size: 14px;
+	&--apply{
+		background-color: $light-purple;
+		color: white;
+	}
+	&--cancel{
+		color: $white-purple;
+	}
+	&--product-button{
+		color: $glass-black;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+.product-add-btn{
+	min-width: 105px;
+	color: white;
+	background-color: $light-purple;
+	margin-left: 20px;
+}
+
+.next-page-btn{
+	height: 35px;
+	background-color: $white-pink;
+	padding: 0 5px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.16);
+	font-size: 14px;
+}
+ .button-style{
+	 &:hover{
+		background-color: #9874B8;
+	}
+	&:focus{
+		background-color: #8767A3;
+	}
+	&:active{
+		background-color: #8767A3;
+	}
+ }
+
