@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
 //require('load-grunt-tasks')(grunt);
    grunt.initConfig({
+	   pkg: grunt.file.readJSON('package.json'),
 	   'http-server': {
  
         'dev': {
@@ -58,44 +59,7 @@ module.exports = function(grunt) {
 		}
  
         },
-		/*sass: {
-				dist: {
-				options: {
-				loadPath: ['node_modules/foundation-sites/scss']
-				},
-				files: createSassCompilerFilesList()
-				}
-			}
-	   },
-	   
-	   /*sass: {
-		dist: {
-      options: {
-        loadPath: ['node_modules/foundation-sites/scss']
-      }
-    }
-  },*/
- 
-      /*sass: {
-		  dev: {
-			options: {
-			  style: 'expanded',
-			  compass: false
-			},
-			files: {
-			  'styles/style.css': 'styles/scss/app.scss',
-			}
-		  },
-		  prod: {
-			options: {
-			  style: 'compressed',
-			  compass: false
-			},
-			files: {
-			  'styles/style.css': 'styles/scss/app.scss'
-			}
-		  }
-		}*/
+		
 		sass: {
 		options: {
 			implementation: sass,
@@ -113,9 +77,31 @@ module.exports = function(grunt) {
 			files: 'styles/scss/{,*/}*.{scss,sass}',
 			tasks: ['sass']
 		  }
-		}
+		},
+		  concat: {
+			options: {
+			  separator: ';',
+			  
+			},
+			dist: {
+			  src: ['js/{*,**/}*.js'
+					/*'js/lib/angular.min.js',
+					'js/lib/angular-route.min.js',
+					'js/lib/popeye.min.js', 
+					'js/app.js', 
+					'js/app-settings.js', 
+					'js/components/home/homeCtrl.js', 
+					'js/components/directives/productsBoard/productsBoard.js',
+					'js/components/directives/productItem/productItem.js',
+					'js/components/modals/addProductModalCtrl.js',
+					'js/components/modals/removeProductModalCtrl.js'*/],
+			  dest: 'dist/built.js',
+    }
+  }
+
 });
 //grunt.loadNpmTasks('grunt-http-server');
+grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.registerTask('default', ['sass', 'watch']);
