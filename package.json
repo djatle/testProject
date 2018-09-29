@@ -4,7 +4,7 @@
 		"grunt-contrib-clean": "~0.5.0",
 		"grunt-contrib-concat": "^0.3.0",
 		"grunt-contrib-copy": "~0.5.0",
-		"grunt-contrib-cssmin": "~0.7.0",
+		"grunt-contrib-cssmin": "^0.7.0",
 		"grunt-contrib-sass": "^1.0.0",
 		"grunt-contrib-uglify": "~0.2.7",
 		"grunt-contrib-watch": "^1.1.0",
@@ -13,6 +13,7 @@
 	},
 	"dependencies": {
 		"foundation-sites": "^6.5.0-rc.3",
+		"grunt-http-server": "^2.1.0",
 		"node-sass": "^4.9.3"
 	}
 }

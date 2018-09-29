@@ -84,8 +84,8 @@ module.exports = function(grunt) {
 			  
 			},
 			dist: {
-			  src: ['js/{*,**/}*.js'
-					/*'js/lib/angular.min.js',
+			  src: [
+					'js/lib/angular.min.js',
 					'js/lib/angular-route.min.js',
 					'js/lib/popeye.min.js', 
 					'js/app.js', 
@@ -94,15 +94,29 @@ module.exports = function(grunt) {
 					'js/components/directives/productsBoard/productsBoard.js',
 					'js/components/directives/productItem/productItem.js',
 					'js/components/modals/addProductModalCtrl.js',
-					'js/components/modals/removeProductModalCtrl.js'*/],
+					'js/components/modals/removeProductModalCtrl.js'],
 			  dest: 'dist/built.js',
     }
-  }
+  },
+	  cssmin: {
+		  target: {
+			files: [{
+			  expand: true,
+			  cwd: 'styles',
+			  src: 'style.css',
+			  dest: 'dist',
+			  ext: '.min.css'
+			}]
+	  }
+	}
+
 
 });
-//grunt.loadNpmTasks('grunt-http-server');
+grunt.loadNpmTasks('grunt-http-server');
 grunt.loadNpmTasks('grunt-contrib-concat');
 grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.loadNpmTasks('grunt-contrib-sass');
+grunt.loadNpmTasks('grunt-contrib-cssmin');
 grunt.registerTask('default', ['sass', 'watch']);
+grunt.registerTask('release', ['concat', 'cssmin']);
 };
